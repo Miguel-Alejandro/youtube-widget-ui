@@ -37,7 +37,7 @@
     "jest": "^27.5.1",
     "jest-cli": "^27.5.1",
     "puppeteer": "^19.5.2",
-    "semantic-release": "^20.1.0"
+    "semantic-release": "^19.0.5"
   },
   "license": "MIT",
   "config": {
