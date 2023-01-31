@@ -6,56 +6,40 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface YProfileInfo {
+        "apiKey": string;
+        "channelDescription": string;
+        "channelImage": string;
+        "customDescription": boolean;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLYProfileInfoElement extends Components.YProfileInfo, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLYProfileInfoElement: {
+        prototype: HTMLYProfileInfoElement;
+        new (): HTMLYProfileInfoElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "y-profile-info": HTMLYProfileInfoElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface YProfileInfo {
+        "apiKey"?: string;
+        "channelDescription"?: string;
+        "channelImage"?: string;
+        "customDescription"?: boolean;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "y-profile-info": YProfileInfo;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "y-profile-info": LocalJSX.YProfileInfo & JSXBase.HTMLAttributes<HTMLYProfileInfoElement>;
         }
     }
 }
