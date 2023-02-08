@@ -21,7 +21,6 @@ export class YProfile {
 
   private getProfileInfo = async (): Promise<void> => {
     this.profileData = await profileData(this.apiKey);
-    console.log('PRINT INFO', this.profileData.items[0].snippet.thumbnails.default.url);
   };
 
   render() {

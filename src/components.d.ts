@@ -12,6 +12,10 @@ export namespace Components {
         "channelImage": string;
         "customDescription": boolean;
     }
+    interface YVideoList {
+        "apiKey": string;
+        "channelId": string;
+    }
 }
 declare global {
     interface HTMLYProfileInfoElement extends Components.YProfileInfo, HTMLStencilElement {
@@ -20,8 +24,15 @@ declare global {
         prototype: HTMLYProfileInfoElement;
         new (): HTMLYProfileInfoElement;
     };
+    interface HTMLYVideoListElement extends Components.YVideoList, HTMLStencilElement {
+    }
+    var HTMLYVideoListElement: {
+        prototype: HTMLYVideoListElement;
+        new (): HTMLYVideoListElement;
+    };
     interface HTMLElementTagNameMap {
         "y-profile-info": HTMLYProfileInfoElement;
+        "y-video-list": HTMLYVideoListElement;
     }
 }
 declare namespace LocalJSX {
@@ -31,8 +42,13 @@ declare namespace LocalJSX {
         "channelImage"?: string;
         "customDescription"?: boolean;
     }
+    interface YVideoList {
+        "apiKey"?: string;
+        "channelId"?: string;
+    }
     interface IntrinsicElements {
         "y-profile-info": YProfileInfo;
+        "y-video-list": YVideoList;
     }
 }
 export { LocalJSX as JSX };
@@ -40,6 +56,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "y-profile-info": LocalJSX.YProfileInfo & JSXBase.HTMLAttributes<HTMLYProfileInfoElement>;
+            "y-video-list": LocalJSX.YVideoList & JSXBase.HTMLAttributes<HTMLYVideoListElement>;
         }
     }
 }

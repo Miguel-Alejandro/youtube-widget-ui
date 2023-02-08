@@ -1,5 +1,6 @@
 import { Builder } from "builder-pattern";
 import { Profile, ProfileItem } from "../interfaces/profile-info.interface";
+import { Video, VideoList } from "../interfaces/video.interface";
 
 export const profileBuilderClass = (res:any): Profile => {
     return Builder(Profile)
@@ -17,5 +18,25 @@ export const profileBuilderClass = (res:any): Profile => {
     )
     .kind(res.kind)
     .pageInfo(res.pageInfo)
+    .build();
+}
+
+
+export const videoBuilderClass = (res:any): Video => {
+  return Builder(Video)
+    .etag(res.etag)
+    .items(
+      res.items.map( (resItem: any) => 
+        Builder(VideoList)
+        .etag(resItem.etag)
+        .id(resItem.id)
+        .kind(resItem.kind)
+        .snippet(resItem.snippet)
+        .build(),
+      )
+    )
+    .kind(res.kind)
+    .pageInfo(res.pageInfo)
+    .regionCode(res.regionCode)
     .build();
 }
