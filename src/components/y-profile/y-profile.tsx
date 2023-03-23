@@ -1,5 +1,5 @@
 import { Component, h, Prop, State } from '@stencil/core';
-import { Profile } from '../../interfaces/profile-info.interface';
+import { Profile } from '../../classes/profile-info.class';
 import { profileData } from '../../services/profile-data';
 
 @Component({
