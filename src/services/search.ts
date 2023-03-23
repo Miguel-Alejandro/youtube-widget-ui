@@ -1,4 +1,4 @@
-import { Search } from "../classes/search-class";
+import { Search } from "../classes/search.class";
 import { searchBuilderClass } from "./builder-pattern";
 
 export const getSearch = async ( apikey: string, channelId: string ): Promise<Search> => {

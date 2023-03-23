@@ -1,7 +1,7 @@
 import { Builder } from "builder-pattern";
-import { Profile, ProfileItem } from "../classes/profile-info.interface";
-import { Video, VideoList } from "../classes/video.interface";
-import { Item, Search, Snippet, Thumbnails } from "../classes/search-class";
+import { Profile, ProfileItem } from "../classes/profile-info.class";
+import { Video, VideoList } from "../classes/video.class";
+import { Item, Search, Snippet, Thumbnails } from "../classes/search.class";
 
 export const profileBuilderClass = (res:any): Profile => {
     return Builder(Profile)
