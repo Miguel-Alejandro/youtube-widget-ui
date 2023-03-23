@@ -8,7 +8,35 @@
     <script type="module" src="/build/youtube-widget-ui.esm.js"></script>
     <script nomodule src="/build/youtube-widget-ui.js"></script>
   </head>
+
+  <style>
+    .test{
+      margin: auto;
+      margin-top: 3rem;
+      width: 400px;
+      height: 500px;
+    }
+  </style>
+
   <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+    <div class="test">
+      <y-profile-info 
+      custom-description="false"
+      channel-image="https://yt3.googleusercontent.com/vEl_m94DAg1HHrcA5mzLV1igOnpKqeZ7BRhz4g8SCrhWzOCB_doEy4MYl8auC8Icq_GSm1UsAaY=s176-c-k-c0x00ffffff-no-rj"
+      channel-description="Esta es la descripcion de un canal, de preferencia esta descripcion agregarla en una variable"
+      api-key="AIzaSyDc5_zIVyZ68ZsyF2WYKqEUZHBcFius7og"></y-profile>
+    </div>
+
+    <div class="videos"> 
+      <y-video-list
+      api-key="AIzaSyDc5_zIVyZ68ZsyF2WYKqEUZHBcFius7og"
+      channel-id="UC55-mxUj5Nj3niXFReG44OQ"></y-video-list>
+    </div>
+
+    <script>
+      
+    </script>
+
   </body>
+
 </html>
