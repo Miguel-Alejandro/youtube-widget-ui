@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Search } from "./classes/search.class";
+export { Search } from "./classes/search.class";
 export namespace Components {
     interface YProfileInfo {
         "apiKey": string;
@@ -13,11 +15,17 @@ export namespace Components {
         "customDescription": boolean;
     }
     interface YSearch {
+        "apiKey": string;
+        "channelId": string;
     }
     interface YVideoList {
         "apiKey": string;
         "channelId": string;
     }
+}
+export interface YSearchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLYSearchElement;
 }
 declare global {
     interface HTMLYProfileInfoElement extends Components.YProfileInfo, HTMLStencilElement {
@@ -52,6 +60,9 @@ declare namespace LocalJSX {
         "customDescription"?: boolean;
     }
     interface YSearch {
+        "apiKey"?: string;
+        "channelId"?: string;
+        "onSearchResult"?: (event: YSearchCustomEvent<Search>) => void;
     }
     interface YVideoList {
         "apiKey"?: string;

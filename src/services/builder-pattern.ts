@@ -43,7 +43,6 @@ export const videoBuilderClass = (res:any): Video => {
 }
 
 export const searchBuilderClass = (res:any): Search =>  {
-  console.log('RES PARAM', res)
  return Builder(Search)
   .etag(res.etag)
   .items(
