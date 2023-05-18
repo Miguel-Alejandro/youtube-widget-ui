@@ -5,6 +5,8 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Search } from "./classes/search.class";
+export { Search } from "./classes/search.class";
 export namespace Components {
     interface YProfileInfo {
         "apiKey": string;
@@ -12,10 +14,18 @@ export namespace Components {
         "channelImage": string;
         "customDescription": boolean;
     }
+    interface YSearch {
+        "apiKey": string;
+        "channelId": string;
+    }
     interface YVideoList {
         "apiKey": string;
         "channelId": string;
     }
+}
+export interface YSearchCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLYSearchElement;
 }
 declare global {
     interface HTMLYProfileInfoElement extends Components.YProfileInfo, HTMLStencilElement {
@@ -23,6 +33,12 @@ declare global {
     var HTMLYProfileInfoElement: {
         prototype: HTMLYProfileInfoElement;
         new (): HTMLYProfileInfoElement;
+    };
+    interface HTMLYSearchElement extends Components.YSearch, HTMLStencilElement {
+    }
+    var HTMLYSearchElement: {
+        prototype: HTMLYSearchElement;
+        new (): HTMLYSearchElement;
     };
     interface HTMLYVideoListElement extends Components.YVideoList, HTMLStencilElement {
     }
@@ -32,6 +48,7 @@ declare global {
     };
     interface HTMLElementTagNameMap {
         "y-profile-info": HTMLYProfileInfoElement;
+        "y-search": HTMLYSearchElement;
         "y-video-list": HTMLYVideoListElement;
     }
 }
@@ -42,12 +59,18 @@ declare namespace LocalJSX {
         "channelImage"?: string;
         "customDescription"?: boolean;
     }
+    interface YSearch {
+        "apiKey"?: string;
+        "channelId"?: string;
+        "onSearchResult"?: (event: YSearchCustomEvent<Search>) => void;
+    }
     interface YVideoList {
         "apiKey"?: string;
         "channelId"?: string;
     }
     interface IntrinsicElements {
         "y-profile-info": YProfileInfo;
+        "y-search": YSearch;
         "y-video-list": YVideoList;
     }
 }
@@ -56,6 +79,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "y-profile-info": LocalJSX.YProfileInfo & JSXBase.HTMLAttributes<HTMLYProfileInfoElement>;
+            "y-search": LocalJSX.YSearch & JSXBase.HTMLAttributes<HTMLYSearchElement>;
             "y-video-list": LocalJSX.YVideoList & JSXBase.HTMLAttributes<HTMLYVideoListElement>;
         }
     }
