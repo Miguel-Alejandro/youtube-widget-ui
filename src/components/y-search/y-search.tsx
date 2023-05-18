@@ -8,23 +8,21 @@ import { Search } from '../../classes/search.class';
   shadow: false,
 })
 export class YSearch {
-
-  @Prop({mutable: true}) apiKey: string;
-  @Prop({mutable: true}) channelId: string;
+  @Prop({ mutable: true }) apiKey: string;
+  @Prop({ mutable: true }) channelId: string;
 
   @State() toSearch: string;
   @Event() searchResult: EventEmitter<Search>;
 
-  constructor(){}
+  constructor() {}
 
   async valueOfSearch(event: Event): Promise<void> {
-      this.toSearch = (event.target as HTMLInputElement).value
+    this.toSearch = (event.target as HTMLInputElement).value;
 
-      if(this.toSearch != ''){
-        const result = await getSearch(this.apiKey, this.channelId, this.toSearch);
-        this.searchResult.emit(result);
-      }
-      
+    if (this.toSearch != '') {
+      const result = await getSearch(this.apiKey, this.channelId, this.toSearch);
+      this.searchResult.emit(result);
+    }
   }
 
   render() {
@@ -32,18 +30,9 @@ export class YSearch {
       <div class="search">
         <div class="search__input">
           <ion-icon name="search-outline"></ion-icon>
-          <input 
-            type="text" 
-            class="search__input__box"
-            onInput={this.valueOfSearch.bind(this)}
-            placeholder='Buscar video' />
+          <input class="input" onInput={this.valueOfSearch.bind(this)} placeholder="Buscar video" />
         </div>
       </div>,
-
-      <div>
-        {this.toSearch}
-      </div>
-    ]
+    ];
   }
-
 }

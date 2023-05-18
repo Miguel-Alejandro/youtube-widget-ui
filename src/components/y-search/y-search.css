@@ -4,7 +4,7 @@
   display: block;
 }
 
-.search__input{
+.search__input {
   width: 100%;
   position: relative;
 
@@ -19,13 +19,32 @@
   color: #757575;
 }
 
-.search__input__box{
+.input {
   width: 100%;
-  height: 33px;
-  padding: 5px;
-  padding-left: 42px;
-  border-radius: 5px;
-  border: 1px solid #bebebe;
+  padding: 12px;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 2px 2px 7px 0 rgb(0, 0, 0, 0.2);
   outline: none;
-  color: #757575;
+  color: dimgray;
+  padding-left: 45px;
+  height: 30px;
+}
+
+@keyframes justshake {
+  25% {
+    transform: translateX(5px);
+  }
+
+  50% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX-(5px);
+  }
 }
