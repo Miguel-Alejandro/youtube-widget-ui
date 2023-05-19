@@ -21,7 +21,7 @@ If you are using or working with a javascript project with node.js to install th
 #### Installing
 
 ```bash
-  npm install youtube-widget-ui
+  npm install --save youtube-widget-ui
 ```
 
 #### Using
