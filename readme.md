@@ -1,12 +1,7 @@
 
 # Youtube Widget Ui
 
-library to add videos, profile information or search videos from your youtube channel, add any of these lightweight and powerful components to your web project.
-
-
-## 📒 Documentation
-You can also find the documentation on this site
-[Documentation](https://linktodocumentation)
+library to add videos, profile information or search for videos from your youtube channel, add any of these lightweight and powerful components to your web project. This library uses the youtube api v3
 
 
 ## 🚀 Features
@@ -31,13 +26,13 @@ If you are using or working with a javascript project with node.js to install th
 
 #### Using
 In the app.module.ts we add the CUSTOM_ELEMENTS_SCHEMA
-```bash
+```javascript
 schemas: [CUSTOM_ELEMENTS_SCHEMA]
 ```
 
 The next thing to do is import the
 defineCustomElements of the component itself
-```bash
+```javascript
 import { defineCustomElements } from 'youtube-widget-ui/loader';
 ```
 
