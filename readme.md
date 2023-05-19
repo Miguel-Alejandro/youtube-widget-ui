@@ -13,7 +13,7 @@ library to add videos, profile information or search for videos from your youtub
 
 ## 🖥️ Installation
 
-This library can be used either in pure javascript or some framework like angular, react or vue. So next we will see how to install it.
+This library can be used in Angular, React, or Vue. So next we will see how to install it. In the next few days I will be adding the installation documentation for React and vue
 
 ### 🔴 Angular
 If you are using or working with a javascript project with node.js to install this library follow the steps below
