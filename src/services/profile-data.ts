@@ -1,4 +1,4 @@
-import { Profile } from "../interfaces/profile-info.interface";
+import { Profile } from "../classes/profile-info.class";
 import { profileBuilderClass } from "./builder-pattern";
 
 
