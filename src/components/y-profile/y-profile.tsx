@@ -1,33 +1,33 @@
 import { Component, h, Prop, State } from '@stencil/core';
 import { Profile } from '../../classes/profile-info.class';
-import { profileData } from '../../services/profile-data';
+import { ProfileService } from '../../services/profile-data';
 
 @Component({
-  tag: 'y-profile-info',
+  tag: 'ywui-profile-info',
   styleUrl: 'y-profile.css',
   shadow: false,
 })
-export class YProfile {
+export class YwuiProfile {
 
   constructor() {
     this.getProfileInfo();
   }
 
   @State() profileData: Profile;
+
   @Prop({ mutable: true }) apiKey: string;
-  @Prop({ mutable: true, reflect: true }) customDescription: boolean;
-  @Prop({ mutable: true, reflect: true }) channelDescription: string;
-  @Prop({ mutable: true, reflect: true }) channelImage: string;
+  @Prop({ mutable: true, reflect: true }) channelId: string;
+  @Prop({ mutable: true, reflect: true }) showDescription: boolean;
 
   private getProfileInfo = async (): Promise<void> => {
-    this.profileData = await profileData(this.apiKey);
+    this.profileData = await ProfileService.profileData(this.apiKey, this.channelId);
   };
 
   render() {
     return [
       <div class="y-profile">
         <div class="y-profile__image">
-          <img class="y-profile__image__img" src={this.channelImage} alt="" />
+          <img class="y-profile__image__img" src={this.profileData?.items[0]?.snippet?.thumbnails?.default?.url} alt="" />
         </div>
 
         <div class="y-profile__info">
@@ -36,7 +36,10 @@ export class YProfile {
             {this.profileData?.items[0]?.snippet?.title}
           </h1>
           <span> {this.profileData?.items[0]?.snippet?.customUrl ?? ''} </span>
-          <p> {this.customDescription ? this.profileData?.items[0]?.snippet?.description : this.channelDescription} </p>
+          {
+            this.showDescription && 
+            <p>{this.profileData?.items[0]?.snippet?.description}</p>
+          }
         </div>
       </div>,
     ];

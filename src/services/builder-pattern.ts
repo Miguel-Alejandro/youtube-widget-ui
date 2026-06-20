@@ -7,7 +7,7 @@ export const profileBuilderClass = (res:any): Profile => {
     return Builder(Profile)
     .etag(res.etag)
     .items(
-      res.items.map( resItem => 
+      res?.items?.map( (resItem:any) => 
         Builder(ProfileItem)
         .contentDetails(resItem.contentDetails)
         .etag(resItem.etag)
@@ -27,7 +27,7 @@ export const videoBuilderClass = (res:any): Video => {
   return Builder(Video)
     .etag(res.etag)
     .items(
-      res.items.map( (resItem: any) => 
+      res?.items?.map( (resItem: any) => 
         Builder(VideoList)
         .etag(resItem.etag)
         .id(resItem.id)
@@ -46,7 +46,7 @@ export const searchBuilderClass = (res:any): Search =>  {
  return Builder(Search)
   .etag(res.etag)
   .items(
-      res.items.map( (resItem: any) => 
+      res?.items?.map( (resItem: any) => 
         Builder(Item)
         .etag(resItem.etag)
         .id(resItem.id)

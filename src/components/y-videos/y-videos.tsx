@@ -3,7 +3,7 @@ import { getVideos } from '../../services/video';
 import moment from 'moment';
 
 @Component({
-  tag: 'y-video-list',
+  tag: 'ywui-video-list',
   styleUrl: 'y-videos.css',
   shadow: false,
 })
