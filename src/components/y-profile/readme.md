@@ -7,12 +7,11 @@
 
 ## Properties
 
-| Property             | Attribute             | Description | Type      | Default     |
-| -------------------- | --------------------- | ----------- | --------- | ----------- |
-| `apiKey`             | `api-key`             |             | `string`  | `undefined` |
-| `channelDescription` | `channel-description` |             | `string`  | `undefined` |
-| `channelImage`       | `channel-image`       |             | `string`  | `undefined` |
-| `customDescription`  | `custom-description`  |             | `boolean` | `undefined` |
+| Property          | Attribute          | Description | Type      | Default     |
+| ----------------- | ------------------ | ----------- | --------- | ----------- |
+| `apiKey`          | `api-key`          |             | `string`  | `undefined` |
+| `channelId`       | `channel-id`       |             | `string`  | `undefined` |
+| `showDescription` | `show-description` |             | `boolean` | `undefined` |
 
 
 ## Dependencies
@@ -24,8 +23,8 @@
 ### Graph
 ```mermaid
 graph TD;
-  y-profile-info --> ion-icon
-  style y-profile-info fill:#f9f,stroke:#333,stroke-width:4px
+  ywui-profile-info --> ion-icon
+  style ywui-profile-info fill:#f9f,stroke:#333,stroke-width:4px
 ```
 
 ----------------------------------------------
