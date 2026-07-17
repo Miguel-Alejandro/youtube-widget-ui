@@ -1,5 +1,5 @@
 import { Builder } from "builder-pattern";
-import { Profile, ProfileItem } from "../classes/profile-info.class";
+import { Profile, ProfileItem } from "../classes/Profile";
 import { Video, VideoList } from "../classes/video.class";
 import { Item, Search, Snippet, Thumbnails } from "../classes/search.class";
 
