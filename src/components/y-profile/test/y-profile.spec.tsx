@@ -1,10 +1,10 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { YProfile } from '../y-profile';
+import { YwuiProfile } from '../y-profile';
 
 describe('y-profile', () => {
   it('renders', async () => {
     const page = await newSpecPage({
-      components: [YProfile],
+      components: [YwuiProfile],
       html: `<y-profile></y-profile>`,
     });
     expect(page.root).toEqualHtml(`

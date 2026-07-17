@@ -8,17 +8,16 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { Search } from "./classes/search.class";
 export { Search } from "./classes/search.class";
 export namespace Components {
-    interface YProfileInfo {
-        "apiKey": string;
-        "channelDescription": string;
-        "channelImage": string;
-        "customDescription": boolean;
-    }
     interface YSearch {
         "apiKey": string;
         "channelId": string;
     }
-    interface YVideoList {
+    interface YwuiProfileInfo {
+        "apiKey": string;
+        "channelId": string;
+        "showDescription": boolean;
+    }
+    interface YwuiVideoList {
         "apiKey": string;
         "channelId": string;
     }
@@ -28,59 +27,58 @@ export interface YSearchCustomEvent<T> extends CustomEvent<T> {
     target: HTMLYSearchElement;
 }
 declare global {
-    interface HTMLYProfileInfoElement extends Components.YProfileInfo, HTMLStencilElement {
-    }
-    var HTMLYProfileInfoElement: {
-        prototype: HTMLYProfileInfoElement;
-        new (): HTMLYProfileInfoElement;
-    };
     interface HTMLYSearchElement extends Components.YSearch, HTMLStencilElement {
     }
     var HTMLYSearchElement: {
         prototype: HTMLYSearchElement;
         new (): HTMLYSearchElement;
     };
-    interface HTMLYVideoListElement extends Components.YVideoList, HTMLStencilElement {
+    interface HTMLYwuiProfileInfoElement extends Components.YwuiProfileInfo, HTMLStencilElement {
     }
-    var HTMLYVideoListElement: {
-        prototype: HTMLYVideoListElement;
-        new (): HTMLYVideoListElement;
+    var HTMLYwuiProfileInfoElement: {
+        prototype: HTMLYwuiProfileInfoElement;
+        new (): HTMLYwuiProfileInfoElement;
+    };
+    interface HTMLYwuiVideoListElement extends Components.YwuiVideoList, HTMLStencilElement {
+    }
+    var HTMLYwuiVideoListElement: {
+        prototype: HTMLYwuiVideoListElement;
+        new (): HTMLYwuiVideoListElement;
     };
     interface HTMLElementTagNameMap {
-        "y-profile-info": HTMLYProfileInfoElement;
         "y-search": HTMLYSearchElement;
-        "y-video-list": HTMLYVideoListElement;
+        "ywui-profile-info": HTMLYwuiProfileInfoElement;
+        "ywui-video-list": HTMLYwuiVideoListElement;
     }
 }
 declare namespace LocalJSX {
-    interface YProfileInfo {
-        "apiKey"?: string;
-        "channelDescription"?: string;
-        "channelImage"?: string;
-        "customDescription"?: boolean;
-    }
     interface YSearch {
         "apiKey"?: string;
         "channelId"?: string;
         "onSearchResult"?: (event: YSearchCustomEvent<Search>) => void;
     }
-    interface YVideoList {
+    interface YwuiProfileInfo {
+        "apiKey"?: string;
+        "channelId"?: string;
+        "showDescription"?: boolean;
+    }
+    interface YwuiVideoList {
         "apiKey"?: string;
         "channelId"?: string;
     }
     interface IntrinsicElements {
-        "y-profile-info": YProfileInfo;
         "y-search": YSearch;
-        "y-video-list": YVideoList;
+        "ywui-profile-info": YwuiProfileInfo;
+        "ywui-video-list": YwuiVideoList;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "y-profile-info": LocalJSX.YProfileInfo & JSXBase.HTMLAttributes<HTMLYProfileInfoElement>;
             "y-search": LocalJSX.YSearch & JSXBase.HTMLAttributes<HTMLYSearchElement>;
-            "y-video-list": LocalJSX.YVideoList & JSXBase.HTMLAttributes<HTMLYVideoListElement>;
+            "ywui-profile-info": LocalJSX.YwuiProfileInfo & JSXBase.HTMLAttributes<HTMLYwuiProfileInfoElement>;
+            "ywui-video-list": LocalJSX.YwuiVideoList & JSXBase.HTMLAttributes<HTMLYwuiVideoListElement>;
         }
     }
 }
